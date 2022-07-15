@@ -43,5 +43,9 @@ for type_bits in [4, 8, 12, 16]:
 	underflow_check_1 = overflow_check_1
 	underflow_check_2 = overflow_check_2
 
+	print(f'{type_bits} bits -- X = {X}, Y = {Y}, P = {product}')
+	print(f'bitmask = {bitMask}')
+	print(f'signMask = {signMask}')
+
 	rule.check(actual_overflow, Or(overflow_check_1 != 0, overflow_check_2 != 0))
 	rule.check(actual_underflow, Or(underflow_check_1 != 0, underflow_check_2 != 0))
